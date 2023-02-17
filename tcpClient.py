@@ -14,8 +14,9 @@ while True:
     sentence = input("Skriv inn noe her: ")
     clientsocket.send(sentence.encode())
     modifiedSentence = clientsocket.recv(1024)
-    print("From server: ", modifiedSentence.decode())
     if modifiedSentence.decode() == "EXIT":
         clientsocket.close()
+    print("From server: ", modifiedSentence.decode())
+
 
 
